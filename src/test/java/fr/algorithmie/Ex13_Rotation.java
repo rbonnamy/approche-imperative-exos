@@ -29,8 +29,10 @@ public class Ex13_Rotation {
 	public void afficherAlgo() {
 
 		// TODO Effectuez une rotation à droite des éléments du tableau array
-		// Exemple : si le tableau contient {0,1,2,3} alors il contiendra {3,0,1,2}
-		// après rotation
+		// Exemple : si le tableau contient {0,1,2,3} alors il contiendra {3 ,0, 1, 2}
+		// après rotation.
+		// C'est à dire que tous les éléments sont "décalés" vers la droite.
+		// Cas particulier : L'élément le plus à droite (3) sort du tableau et revient en 1ère case.
 		
 		// TODO Afficher le contenu du tableau après rotation avec Resultat.log
 	}
