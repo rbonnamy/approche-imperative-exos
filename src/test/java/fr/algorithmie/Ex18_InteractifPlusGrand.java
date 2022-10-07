@@ -30,8 +30,8 @@ public class Ex18_InteractifPlusGrand {
 		Scanner scanner = new Scanner(System.in) ;
 		
 		// TODO Demander à l'utilisateur de saisir 10 nombres entiers
-		// TODO Affichez chaque nombre saisi avec Resultat.log
-		// TODO Enfin affichez avec Resultat.log le max des 10 nombres
+		// TODO LOGUEZ chaque nombre saisi avec Resultat.log
+		// TODO Enfin LOGUEZ avec Resultat.log le max des 10 nombres
 	
 		
 		scanner.close();

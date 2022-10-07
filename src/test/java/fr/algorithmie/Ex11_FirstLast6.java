@@ -1,21 +1,24 @@
 package fr.algorithmie;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import outils.Exercice;
 import outils.ExerciceRunner;
 import outils.Question;
+import outils.Resultat;
 
 /**
- * Ne modifiez ni les noms des classes, ni les noms des méthodes.
- * Utilisez Resultat.log pour afficher les résultats
- *  
+ * Ne modifiez ni les noms des classes, ni les noms des méthodes. Utilisez
+ * Resultat.log pour afficher les résultats
+ * 
  * @author DIGINAMIC
  *
  */
 @RunWith(ExerciceRunner.class)
-@Exercice(nom="FirstLast6")
+@Exercice(nom = "FirstLast6")
 public class Ex11_FirstLast6 {
 
 	int[] tab1 = {};
@@ -30,11 +33,12 @@ public class Ex11_FirstLast6 {
 	 */
 	@Test
 	@Question(numero = 1)
-	public void afficherAlgo() {
+	public void afficherAlgo() throws Exception {
 
 		// TODO Calculez une valeur booléenne qui contrôle le tableau de la sorte :
-		//  o elle vaut true si le tableau a au moins 1 élément et si le premier élément ou le dernier élément vaut 6.
-		//  o elle vaut false dans les autres cas
+		// o elle vaut true si le tableau a au moins 1 élément et si le premier élément
+		// ou le dernier élément vaut 6.
+		// o elle vaut false dans les autres cas
 
 
 		// TODO LOGUEZ la valeur obtenue pour chacun des 6 tableaux tab1 à tab6
