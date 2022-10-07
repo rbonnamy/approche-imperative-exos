@@ -32,6 +32,7 @@ public class Ex09_SommeDeTableaux {
 		// TODO Créer un tableau somme de même taille que les tableaux précédents et
 		// dont chaque case d’index i contient la somme arithmétique des cases d’index i
 		// des tableaux 1 et 2.
+		// TODO LOGUER tous les éléments du tableau somme.
 		// Exemple : somme[i]=tab1[i]+tab2[i]
 	
 	}
