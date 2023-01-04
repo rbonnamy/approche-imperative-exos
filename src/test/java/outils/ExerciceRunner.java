@@ -12,6 +12,8 @@ import java.util.ResourceBundle;
 
 import org.junit.Ignore;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.internal.AssumptionViolatedException;
+import org.junit.internal.runners.model.EachTestNotifier;
 import org.junit.rules.RunRules;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
@@ -62,12 +64,30 @@ public class ExerciceRunner extends BlockJUnit4ClassRunner  {
 					}
 	        		
 					RunRules runRules = new RunRules(methodBlock(method), Arrays.asList(new TestRule[]{}), description);
-	        		runLeaf(runRules, description, notifier);
+
+					// Fix - runLeaf
+					// pour éviter qu'il marque le test comme terminé avant la vérification du code
+
+					// runLeaf(runRules, description, notifier);
+
+					// Code de runLeaf ci-dessous sans la fin du test
+					EachTestNotifier eachNotifier = new EachTestNotifier(notifier, description);
+					eachNotifier.fireTestStarted();
+					try {
+						runRules.evaluate();
+					} catch (AssumptionViolatedException e) {
+						eachNotifier.addFailedAssumption(e);
+					} catch (Throwable e) {
+						eachNotifier.addFailure(e);
+					}
 	        		
 	        		Optional<Failure> optFailure = checkCode(description, getTestClass().getName(), question.numero());
 	        		if (optFailure.isPresent()) {
 	        			notifier.fireTestFailure(optFailure.get());
 	        		}
+
+					// marquer la fin du test
+					eachNotifier.fireTestFinished();
 	        		
 				} catch (ReflectiveOperationException e) {
 					notifier.fireTestFailure(new Failure(description, new RuntimeException("Echec "+exoName+" - question n°"+question+" : "+e.getCause().getMessage())));
