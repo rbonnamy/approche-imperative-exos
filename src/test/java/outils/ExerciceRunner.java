@@ -62,7 +62,6 @@ public class ExerciceRunner extends BlockJUnit4ClassRunner  {
 					}
 	        		
 					RunRules runRules = new RunRules(methodBlock(method), Arrays.asList(new TestRule[]{}), description);
-	        		runLeaf(runRules, description, notifier);
 	        		
 	        		Optional<Failure> optFailure = checkCode(description, getTestClass().getName(), question.numero());
 	        		if (optFailure.isPresent()) {
