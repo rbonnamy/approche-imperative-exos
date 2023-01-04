@@ -1,5 +1,9 @@
 name : Diginamic - Approche Impérative
 
+on:
+  push:
+  workflow_dispatch:
+
 jobs:
 
   tests:
