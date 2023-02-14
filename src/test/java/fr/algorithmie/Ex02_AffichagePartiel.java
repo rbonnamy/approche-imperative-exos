@@ -38,6 +38,11 @@ public class Ex02_AffichagePartiel {
 	public void affichageValeursPaires() {
 		
 		//TODO LOGUER avec Resultat.log les valeurs paires du tableau (0 sera considéré comme pair)
+		for (int i=0; i<array.length; i++) {
+			if (array[i]%2==0) {
+				Resultat.log(array[i]);
+			}
+		}
 	}
 	
 	@Test
