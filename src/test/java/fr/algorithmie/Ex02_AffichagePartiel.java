@@ -26,6 +26,11 @@ public class Ex02_AffichagePartiel {
 		
 		//TODO En utilisant une boucle et un if, LOGUER avec Resultat.log 
 		// les valeurs du tableau supérieures ou égales à 3
+		for (int i=0; i<array.length; i++) {
+			if (array[i]>=3) {
+				Resultat.log(array[i]);
+			}
+		}
 	}
 	
 	@Test
