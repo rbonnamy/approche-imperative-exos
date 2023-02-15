@@ -7,18 +7,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-  - name: 'Create settings.xml'
-    uses: whelk-io/maven-settings-xml-action@v4
-    with:
-      servers: '[{"id": "github", "username": "${{ secrets.GITHUB_USERNAME }}", "password": "${{ secrets.GITHUB_PASSWORD }}"}]'
-  - name: Build
-    run: mvn install
       
   tests:
     runs-on: ubuntu-latest
 
     steps:
+      - name: 'Create settings.xml'
+        uses: whelk-io/maven-settings-xml-action@v4
+        with:
+          repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/DiginamicFormation/outillage-check-exercices" }]'
+      - name: Build
+        run: mvn install
       - uses: actions/checkout@v3
       - name: Set up JDK 17
         uses: actions/setup-java@v3
