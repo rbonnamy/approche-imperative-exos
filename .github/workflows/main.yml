@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-
+  build:
+    uses: whelk-io/maven-settings-xml-action@v20
+    with:
+      repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/DiginamicFormation/outillage-check-exercices" }]'
+      servers: '[{ "id": "github", "username": "${env.USER}", "password": "${env.PASSWORD}" }]'
+      
   tests:
     runs-on: ubuntu-latest
 

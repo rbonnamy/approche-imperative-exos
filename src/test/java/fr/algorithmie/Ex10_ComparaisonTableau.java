@@ -3,9 +3,9 @@ package fr.algorithmie;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import outils.Exercice;
-import outils.ExerciceRunner;
-import outils.Question;
+import fr.diginamic.check.Exercice;
+import fr.diginamic.check.ExerciceRunner;
+import fr.diginamic.check.Question;
 
 /**
  * Ne modifiez ni les noms des classes, ni les noms des méthodes.
