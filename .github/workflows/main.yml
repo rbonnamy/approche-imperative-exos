@@ -23,6 +23,8 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
           cache: maven
+      - name: install with Maven
+        run : mvn install
       - name: test with Maven
         run : mvn clean test
       - name: Report
