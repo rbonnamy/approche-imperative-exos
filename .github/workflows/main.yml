@@ -8,10 +8,12 @@ on:
 
 jobs:
   build:
-    - name: Utilisation package
-      uses: whelk-io/maven-settings-xml-action@v20
-      with:
-        repositories: '[{ "id": "github", "url": "https://maven.pkg.github.com/DiginamicFormation/outillage-check-exercices" }]'
+  - name: 'Create settings.xml'
+    uses: whelk-io/maven-settings-xml-action@v4
+    with:
+      servers: '[{"id": "github", "username": "${{ secrets.GITHUB_USERNAME }}", "password": "${{ secrets.GITHUB_PASSWORD }}"}]'
+  - name: Build
+    run: mvn install
       
   tests:
     runs-on: ubuntu-latest
